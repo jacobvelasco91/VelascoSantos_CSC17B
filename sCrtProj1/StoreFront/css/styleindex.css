@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+}
+body{
+  background-color: rgba(119,136,153,0.2);
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+
+}
+header{
+  background-color: white;
+  height: 4em;
+  border-bottom: 3px solid lightgray;
+}
+.logo{
+  width:4em;
+  height:auto;
+  display: inline-block;
+}
+.logo img {
+  width:inherit;
+  height: inherit;
+  margin-left: 0;
+  padding-left: 0;
+}
+.login{
+  display: inline-block;
+  margin-top: 2.7em;
+  margin-right: 1em;
+  float: right;
+}
+.login a{
+  margin: 0px 8px;
+  text-decoration: none;
+  color: darkred;
+}
+.storefront img{
+  width:100%;
+}
+
+.loginform{
+  margin: 0%;
+  padding: 10px;
+  text-align: center;
+  width:15em;
+
+}
+.loginform img{
+  width:4em;
+  height:4em;
+}
+
+
+.submit{
+  font-family: sans-serif;
+  font-size: 15px
+}

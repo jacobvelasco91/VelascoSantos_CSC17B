@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <meta name="author" content="Santos Velasco">
+      <link rel="stylesheet" href="./css/stylelogin.css">
+      <script src="./js/valLogin.js"></script>
+    <title>AllThings|Login</title>
+  </head>
+  <body>
+    <header>
+
+        <div class="logo">
+          <a id="logo" href="index.html"><img src="./images/arrowleft.jpg" alt="logo"></a>
+        </div>
+
+    </header>
+
+
+      <form class="loginform" name="loginform" action="./index.html" method="post" onsubmit="return validate()">
+        <img src="./images/logo.png" alt="logo"><br>
+        <h1>sign in</h1><br><br>
+        <fieldset>
+          <legend>email</legend>
+          <input type="text" name="email" placeholder="..." required>
+          <p id='valemail'></p>
+        </fieldset><br>
+        <fieldset>
+          <legend>password</legend>
+          <input type="password" name="password" placeholder="..." required>
+          <p id="valpass"></p>
+        </fieldset><br>
+        <input class="submit" type="submit" name="submit" value="sign in">
+
+      </form>
+      <br><br>
+
+
+
+
+  </body>
+</html>
