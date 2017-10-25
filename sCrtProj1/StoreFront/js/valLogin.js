@@ -12,6 +12,7 @@ var valpass = passReg.test(pass);
 console.log(valemail);
 console.log(valpass);
 
+
 if (valemail == false) {
   document.getElementById('valemail').innerHTML = '<small><sup>*</sup>'+
   'incorrect email</small>';
@@ -22,6 +23,8 @@ if (valpass == false) {
 }
 if (valpass && valemail) {
   return true;
+  localStorage.setItem('user',valemail);
+  localStorage.setItem('pass',valpass);
 }
 else {
   return false;
