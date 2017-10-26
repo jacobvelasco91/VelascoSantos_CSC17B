@@ -3,8 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>Create Survey</title>
+    <script src="./js/question.js"></script>
   </head>
   <body>
+    <script>
+    //creating Question objects, the logic is in question.js
+    //each new object is stored in each q1 ,q2 ,q3, so that variables are each a new object
+    //we do this by passing arguments into the new Question constructor
+    var q1 = new Questions("Do you believe in God?","believes",["yes","no","sorta"]);
+    var q2 = new Questions("Any Religous affiliations?","affiliation",["Christian","Atheist","Anostic"]);
+    var q3 = new Questions();
+
+    console.log(q1);
+    console.log(q2);
+    console.log(q3);
+
+
+
+
+
+    </script>
+
     <form action="" method="post">
       <fieldset>
         <legend>Question 1</legend>
