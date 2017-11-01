@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Create Survey</title>
     <script src="./js/question.js"></script>
+    <script src="./js/controller.js"></script>
   </head>
   <body>
     <script>
@@ -19,10 +20,10 @@
     console.log(q2);
     console.log(q3);
 
-  
-    var survey = new Survey(q1);
 
-    console.log(survey.displayQ);
+    //var survey = new Survey(q1);
+
+    //console.log(survey.displayQ);
 
 
 
@@ -52,6 +53,9 @@
       <input type="submit" name="submit">
 
     </form>
+    <br><br><br><br><br><br><br>
+
+    <button type="button" name="button" onclick="return create();">create</button>
 
   </body>
 </html>

@@ -1,11 +1,7 @@
-function geturl(url){
-  var info = url.split('?');
+function create(){
+var element = document.createElement('form');
+var content = document.createElement('input');
+element.appendChild(content);
+document.body.appendChild(element);
 
-  var nameVpair = info[1].split('&');
-  
-
-  for (var i = 0; i < nameVpair.length; i++) {
-  console.log(nameVpair[i]);
-
-  }
 }
