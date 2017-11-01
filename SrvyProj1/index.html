@@ -8,15 +8,21 @@
   <body>
     <script>
     //creating Question objects, the logic is in question.js
-    //each new object is stored in each q1 ,q2 ,q3, so that variables are each a new object
+    /*Each call to the Questions function constructor is stored in q1 ,q2 ,q3,
+      so that each variable has an object instance of it.*/
     //we do this by passing arguments into the new Question constructor
     var q1 = new Questions("Do you believe in God?","believes",["yes","no","sorta"]);
     var q2 = new Questions("Any Religous affiliations?","affiliation",["Christian","Atheist","Anostic"]);
     var q3 = new Questions();
 
-    console.log(q1);
+    console.log(q1.ques);
     console.log(q2);
     console.log(q3);
+
+  
+    var survey = new Survey(q1);
+
+    console.log(survey.displayQ);
 
 
 
