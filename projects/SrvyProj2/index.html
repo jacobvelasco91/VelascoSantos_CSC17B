@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Create Survey</title>
+    <script src="./js/question.js"></script>
+    <script src="./js/controller.js"></script>
+  </head>
+  <body>
+    <script>
+    //creating Question objects, the logic is in question.js
+    /*Each call to the Questions function constructor is stored in q1 ,q2 ,q3,
+      so that each variable has an object instance of it.*/
+    //we do this by passing arguments into the new Question constructor
+    var q1 = new Questions("Do you believe in God?","believes",["yes","no","sorta"]);
+    var q2 = new Questions("Any Religous affiliations?","affiliation",["Christian","Atheist","Anostic"]);
+    var q3 = new Questions();
+
+    console.log(q1.ques);
+    console.log(q2);
+    console.log(q3);
+
+
+    //var survey = new Survey(q1);
+
+    //console.log(survey.displayQ);
+
+
+
+
+
+    </script>
+
+    <form action="survey.html" method="get">
+      <fieldset>
+        <legend>Question 1</legend>
+        <input type="text" name="q1"><br>
+        <p>Answers</p>
+        1.<input type="text" name="q1a1"><br>
+        2.<input type="text" name="q1a2"><br>
+        3.<input type="text" name="q1a3"><br>
+        4.<input type="text" name="q1a4"><br>
+      </fieldset>
+        <fieldset>
+          <legend>Question 2</legend>
+          <input type="text" name="q2"><br>
+          <p>Answers</p>
+          1.<input type="text" name="q2a1"><br>
+          2.<input type="text" name="q2a2"><br>
+          3.<input type="text" name="q2a3"><br>
+          4.<input type="text" name="q2a4"><br>
+        </fieldset>
+      <input type="submit" name="submit">
+
+    </form>
+    <br><br><br><br><br><br><br>
+
+    <button type="button" name="button" onclick="return create();">create</button>
+
+  </body>
+</html>
