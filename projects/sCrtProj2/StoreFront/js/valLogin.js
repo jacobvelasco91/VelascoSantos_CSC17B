@@ -12,23 +12,20 @@ var valpass = passReg.test(pass);
 console.log(valemail);
 console.log(valpass);
 
-
+return false;
+/*
 if (valemail == false) {
   document.getElementById('valemail').innerHTML = '<small><sup>*</sup>'+
   'incorrect email</small>';
-}
-if (valpass == false) {
+}else if (valpass == false) {
   document.getElementById('valpass').innerHTML = '<small><sup>*</sup>'+
   'must be at least 8 characters long</small>';
-}
-if (valpass && valemail) {
-  return true;
-  localStorage.setItem('user',valemail);
-  localStorage.setItem('pass',valpass);
+} else if (valmail == true && valpass == true) {
+  console.log("true");
 }
 else {
   return false;
-}
+}*/
 
 
 }
