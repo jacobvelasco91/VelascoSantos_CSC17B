@@ -4,7 +4,7 @@
     <meta charset="utf-8">
       <meta name="author" content="Santos Velasco">
       <link rel="stylesheet" href="./css/stylelogin.css">
-      <script src="projects/sCrtProj2/StoreFront/js/valLogin.js"></script>
+      <script src="./js/login.js"></script>
     <title>AllThings|Login</title>
   </head>
   <body>
@@ -18,11 +18,11 @@
     <h1>HEllow WOrld</h1>
 
 
-      <form class="loginform" name="loginform" action="projects/sCrtProj2/StoreFront/index.html" method="post" onsubmit="return validate();">
+      <form class="loginform" name="loginform" action="index.html" method="post" onsubmit="return validate()">
         <img src="./images/logo.png" alt="logo"><br>
         <h1>sign in</h1><br><br>
         <fieldset>
-          <legend>email</legend>
+          <legend id="legendemail">email</legend>
           <input type="text" name="email" placeholder="..." required>
           <p id='valemail'></p>
         </fieldset><br>
