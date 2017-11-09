@@ -11,6 +11,7 @@ var valemail = emailReg.test(email);
 var valpass = passReg.test(pass);
 console.log(valemail);
 console.log(valpass);
+alert("hello");
 
 return false;
 /*
