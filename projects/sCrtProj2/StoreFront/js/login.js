@@ -23,7 +23,7 @@ if (valemail == false || valpass == false) {
     'must be at least 8 characters long</small>';
   } else if (valemail == false && valpass == true) {
     document.getElementById('valemail').innerHTML = '<small><sup>*</sup>'+
-    'incorrect email</small>';
+    'invalid email</small>';
     document.getElementById('valpass').innerHTML = '';
   } else if (valpass == false && valemail == true) {
     document.getElementById('valpass').innerHTML = '<small><sup>*</sup>'+

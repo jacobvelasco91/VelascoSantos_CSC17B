@@ -75,6 +75,10 @@ input{
 .signup:hover{
   background-color: rgb(176,23,31);
 }
+.noacc{
+  border: 1px solid red;
+  background-color: rgba(255,0,0,.03);
+}
 fieldset{
   width:200px;
   margin-left: auto;
