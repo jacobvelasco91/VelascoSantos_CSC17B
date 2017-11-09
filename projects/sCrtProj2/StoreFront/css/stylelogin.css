@@ -48,6 +48,7 @@ header{
 }
 input{
   width: 150px;
+  margin: 5px;
 }
 
 
@@ -56,12 +57,23 @@ input{
   font-family: sans-serif;
   font-size: 15px;
   border:none;
-  background-color:lightgray;
+  background-color:rgb(194,194,194);
   padding:5px;
 }
 .submit:hover{
-  background-color: darkred;
+  background-color: lightgray;
+}
+.signup{
+  border-radius: 4px;
+  font-family: sans-serif;
+  font-size: 15px;
+  border:none;
+  background-color:rgb(139,37,0);
   color:white;
+  padding:5px;
+}
+.signup:hover{
+  background-color: rgb(176,23,31);
 }
 fieldset{
   width:200px;

@@ -18,7 +18,7 @@ console.log(valpass);
 if (valemail == false || valpass == false) {
   if (valemail == false && valpass == false ) {
     document.getElementById('valemail').innerHTML = '<small><sup>*</sup>'+
-    'incorrect email</small>';
+    'invalid email</small>';
     document.getElementById('valpass').innerHTML = '<small><sup>*</sup>'+
     'must be at least 8 characters long</small>';
   } else if (valemail == false && valpass == true) {
