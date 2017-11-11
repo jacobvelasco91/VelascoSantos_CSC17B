@@ -1,4 +1,5 @@
 <!-- PHP for the web, pg 360-365-->
+<!--This file demonstrates how you can add data to a database through a form-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,13 +13,15 @@
     //checks if a form has been submitted | checks for post, if post was used
     if ($_SERVER['REQUEST_METHOD'] == 'POST') { //Handle the form
 
-      //Validate th form data
+      //Validate the form data
       $problem = false;
+      //strip_tags will completely take away any html/php tags
+      //trim will trim off extra white space from both beginning & end of string
       if(!empty($_POST['title']) && !empty($_POST['entry'])){
         $title = trim(strip_tags($_POST['title']));
         $entry = trim(strip_tags($_POST['entry']));
       }else{
-        echo '<p style="color:red;"> Please submit both a title and en entry.</p>';
+        echo '<p style="color:red;"> Please submit both a title and entry.</p>';
         $problem = true;
       }
       if (!$problem) { //if $problem is not true, run code

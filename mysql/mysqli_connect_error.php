@@ -10,7 +10,7 @@
     //Testing the process of connecting to a database in MySQL database server
     //'@' will supress any error code from being printed. error still happens
     //The error here is the 'username' = 'root' is mispelled
-    if ($dbc = @mysqli_connect("localhost","rooot","","store")) {
+    if ($dbc = @mysqli_connect("localhost","rooot","","myblog")) {
       echo "<p style='color:green;'>Sucessfully connected to a database in the MySQL server</p>";
       mysqli_close($dbc);
     }

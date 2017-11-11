@@ -9,14 +9,14 @@
     <?php
     if ($dbc = @mysqli_connect("localhost","root","","myblog")) {
 
-      //Defining the Query to create table | This will have an SQL command
+      //Defining the Query to create table | This var will have an SQL command
       $query = 'CREATE TABLE entries (
         id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(100) NOT NULL,
         entry text NOT NULL,
         date_entered DATETIME NOT NULL
       ) CHARACTER SET utf8 ';
-      //execute the Query | takes two arguments : database and SQL query
+      //execute the Query | function takes 2 arguments : database and SQL query
       if (@mysqli_query($dbc,$query)) {
         echo "<p>The table has been created!</p>";
       }
