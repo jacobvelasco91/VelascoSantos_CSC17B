@@ -9,6 +9,7 @@
   </head>
   <body>
     <?php
+    $loginerror = "";
     //check if there is a request made to the server | if yes, enter statement
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
       //Get information from the login form | already validated in JS
@@ -17,10 +18,17 @@
       //make connection to database
       $dbc = @mysqli_connect("localhost","root","","Newsletter");
       //make query | check database for email and password account
-      $query = "";
-      //execute query | if there is a account with email and password
-      if (@mysqli_query($dbc,$query)) {
-
+      $query = "SELECT * FROM accounts";
+      if (($result = @mysqli_query($dbc,$query)) == true) {
+        while (($row = mysqli_fetch_array($result)) != NULL ) {
+          echo $row[0];
+          echo $row[1];
+          echo $row[2];
+          echo $row[3];
+          echo $row[4];
+        }
+      }else {
+        echo "could not";
       }
     }
      ?>
@@ -36,6 +44,7 @@
     <!--start of FORM -->
     <form class="loginform" name="loginform" action="login.php" method="post" onsubmit="return validate()">
         <img src="./images/logo.png" alt="logo"><br>
+        <?php echo $loginerror;?>
         <h1>sign in</h1><br><br>
         <fieldset>
           <legend id="legendemail">email</legend>
