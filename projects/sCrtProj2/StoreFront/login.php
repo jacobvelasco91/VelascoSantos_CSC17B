@@ -12,24 +12,16 @@
     $loginerror = "";
     //check if there is a request made to the server | if yes, enter statement
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
-      //Get information from the login form | already validated in JS
-      $email = $_POST['email'];
-      $password = $_POST['password'];
       //make connection to database
       $dbc = @mysqli_connect("localhost","root","","Newsletter");
-      //make query | check database for email and password account
+      //Identify the character set | to allow mysqli_real_escape_string
+      mysqli_real_escape_string($dbc,'utf-8');
+      //Get information from the login form | already validated in JS ****Make sure****
+      $email = mysqli_real_escape_string($_POST['email']);
+      $password = mysqli_real_escape_string($_POST['password']);
+      //make query & execute | check database for email and password account
       $query = "SELECT * FROM accounts";
-      if (($result = @mysqli_query($dbc,$query)) == true) {
-        while (($row = mysqli_fetch_array($result)) != NULL ) {
-          echo $row[0];
-          echo $row[1];
-          echo $row[2];
-          echo $row[3];
-          echo $row[4];
-        }
-      }else {
-        echo "could not";
-      }
+
     }
      ?>
 

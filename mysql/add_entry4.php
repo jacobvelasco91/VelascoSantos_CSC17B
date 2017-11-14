@@ -43,7 +43,7 @@
 
     //Display FORM
      ?>
-     <form action="add_entry.php" method="post">
+     <form action="add_entry4.php" method="post">
        <p>Entry Title:<input type="text" name="title" size="40" maxsize="100"></p>
        <p>Entry Text:<textarea name="entry" cols="40" rols="5"></textarea></p>
        <input type=submit name="submit" value="Post this Entry!">

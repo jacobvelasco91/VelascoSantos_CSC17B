@@ -52,7 +52,7 @@
       }
     }
      ?>
-     <form action="secure_data_entry.php" method="POST">
+     <form action="secure_data_entry5.php" method="POST">
       <p>Enter title:<input type="text" name="title"></p>
       <p>Enter entry:<textarea name="entry" cols="30" rows="5"></textarea></p>
       <p><input type="submit" name="submit" value="Post"></p>
