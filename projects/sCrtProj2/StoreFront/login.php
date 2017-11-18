@@ -1,3 +1,4 @@
+<?php   require_once 'connect.php'; ?> <!--database info-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,21 +10,25 @@
   </head>
   <body>
     <?php
-    $loginerror = "";
-    //check if there is a request made to the server | if yes, enter statement
-    if ($_SERVER['REQUEST_METHOD'] == "POST") {
-      //make connection to database
-      $dbc = @mysqli_connect("localhost","root","","Newsletter");
-      //Identify the character set | to allow mysqli_real_escape_string
-      mysqli_real_escape_string($dbc,'utf-8');
-      //Get information from the login form | already validated in JS ****Make sure****
-      $email = mysqli_real_escape_string($_POST['email']);
-      $password = mysqli_real_escape_string($_POST['password']);
-      //make query & execute | check database for email and password account
-      $query = "SELECT * FROM accounts";
 
-    }
-     ?>
+    $loginerror = "";                           //set loginerror to an empty html tag element
+    if ($_SERVER['REQUEST_METHOD'] == "POST") { //check if there is a request made to the server | if yes, enter statement
+      $conn = new mysqli($hn,$un,$pw,$db);      //make database connection | create a new instance of mysqli object | using connect.php
+      if ($conn->connect_error) { //if error connecting, send to error page
+      header("location: /VelascoSantos_CSC17B/projects/sCrtProj2/StoreFront/error1044.html");
+      } else { //else no error connecting continue with getting user input
+        $email = $_POST['email'];
+        $pass = $_POST['password'];
+        $query = "SELECT * FROM accounts WHERE email='$email' and password='$pass'"; //Create a query to retreive data to match
+        $result = $conn->query($query); //result becomes object | execute query and check for any rows returned
+        if($result->num_rows > 0){ //if returned 1 or more row send to homepage
+          header("location: /VelascoSantos_CSC17B/projects/sCrtProj2/StoreFront/index.html");
+        } else { //give an error
+          $loginerror = "Sorry, no matched account. Try it again?";
+        }
+      } //end of else connection true
+    }//END http request
+    ?>
 
     <!--Header Area-->
     <header>
@@ -36,8 +41,8 @@
     <!--start of FORM -->
     <form class="loginform" name="loginform" action="login.php" method="post" onsubmit="return validate()">
         <img src="./images/logo.png" alt="logo"><br>
-        <?php echo $loginerror;?>
         <h1>sign in</h1><br><br>
+        <?php echo "<p style='color:red;'>".$loginerror."</p>"; ?>
         <fieldset>
           <legend id="legendemail">email</legend>
           <input type="text" name="email" placeholder="..." required>
