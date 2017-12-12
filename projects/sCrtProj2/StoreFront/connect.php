@@ -2,5 +2,5 @@
   $hn = "localhost"; //HOSTNAME
   $un = "root";     //USERNAME
   $pw = "";         //PASSWORD
-  $db = "store";    //STORE
+  $db = "sCart";    //STORE
  ?>

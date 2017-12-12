@@ -17,7 +17,7 @@ been used. If it has, return error to user, if its okay, continue with account c
     $signerror="";
      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
        //create mysqli object to connect
-       $dbc = new mysqli("localhost","root","","store");
+       $dbc = new mysqli("localhost","root","","sCart");
        //set charset code | using the object's properties
        $dbc->set_charset('utf-8');
        //grab info from form email,firstname,lastname,password and strip
@@ -32,9 +32,9 @@ been used. If it has, return error to user, if its okay, continue with account c
          $signerror = "An account with that email already exists. Try logging in.";
        } else {
        //Make a query to insert into table
-       $query = "INSERT INTO accounts (email,fname,lname,password) VALUES('$signup_email','$signup_fname','$signup_lname','$signup_password')";
+       $query2 = "INSERT INTO accounts (email,fname,lname,password) VALUES('$signup_email','$signup_fname','$signup_lname','$signup_password')";
        //execute query | using properties of mysqli object.... mysqli_query()
-       if ($dbc->query($query)) { //if query returned true go back to hoome page
+       if ($dbc->query($query2)) { //if query returned true go back to hoome page
          setcookie("user", $signup_fname, time() + (86400 * 30), "/");
          header("location: /VelascoSantos_CSC17B/projects/sCrtProj2/StoreFront/index.html");
        }else{
