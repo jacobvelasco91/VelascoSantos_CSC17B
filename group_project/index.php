@@ -1,15 +1,8 @@
 <?php
-  require_once './login.php';
+$title = "Home";
+include_once "./includes/head.html";
+require_once './includes/login.php';
   ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>ZELDA | CSC17B</title>
-    <link rel="stylesheet" href="./css/landingPage.css">
-    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
-  </head>
-  <body>
     <header>
       <video width="auto" height="auto" autoplay loop >
         <source src="./zelda_images/zelda_promo1.mp4" type="video/mp4">
@@ -29,15 +22,7 @@
       </div>
     </div>
     <div class="signup-container">
-      <a class="signup-button" href="./signup.php">sign up to play!</a>
+        <a class="signup-button" href="./signup_page.php">sign up to play!</a>
     </div>
     <hr>
-    <footer>
-      <div class="credintials">
-        <p>CSC17B Team Members: </p>
-      </div>
-    </footer>
-
-
-  </body>
-</html>
+<?php include_once "./includes/footer.html"; ?>

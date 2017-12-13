@@ -1,19 +1,23 @@
+
 header {
   text-align: center;
 }
-.title {
+.title1 {
   color:gray;
 }
-.signup-container {
+.signup-container2 {
+  overflow: scroll;
+  display: block;
   text-align: center;
-  margin:20px;
-  padding:15px;
-  border:2px solid rgb(212,206,70);
+  padding:50px 0px;
+  border:4px solid rgba(13,146,99,0.95);
+  margin-top: 2em;
+  margin-bottom: 5em;
   margin-left:auto;
   margin-right:auto;
   width:550px;
   height:auto;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 .input-text {
   font-size:15px;
@@ -22,21 +26,32 @@ header {
   width:20em;
 }
 .input-submit {
-  color: black;
+  color: white;
   font-size:15px;
   border: 1px solid lightgray;
   margin:1em;
   padding:15px;
   width:25em;
-  background-color: lightgray;
+  background-color: 	rgb(169,169,169);
 }
 .input-submit:hover {
   color:white;
   background-color: rgb(13,146,99);
 }
-.credintials {
-  margin-top: 4em;
-  margin-bottom: 3em;
-  text-align: center;
-  color:gray;
+.errors-container {
+  margin: 2em auto 1em auto;
+  width:75%;
+  height:auto;
+  background-color: pink;
+  border:1px maroon solid;
+  border-radius: 4px;
+}
+.signup-errors li {
+  color:maroon;
+  font-size: 12px;
+  margin-left:2em;
+  height:auto;
+  text-align: left;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
