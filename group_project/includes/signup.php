@@ -3,6 +3,8 @@ $nPrblm = true;
 $ePrblm = true;
 $pPrblm = true;
 $signup_message = "";
+$username="";
+$email="";
 
 //if user has submitted the form, validate input
 if (isset($_POST['submit'])) {

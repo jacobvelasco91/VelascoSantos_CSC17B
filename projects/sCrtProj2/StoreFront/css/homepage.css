@@ -1,0 +1,80 @@
+body {
+  font-family: 'Slabo 27px', serif;
+}
+header {
+  margin: 1em;
+}
+.header-title {
+  display: inline-block;
+  width:45%;
+  height:auto;
+  margin-top: 1%;
+  font-size: 28px;
+}
+.nav {
+  text-align: right;
+  width: 100%;
+}
+.nav a {
+  color: gray;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 17px;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+.nav a:hover {
+  color: #A8BAA9;
+}
+a img {
+  width:22px;
+  height:18px;
+}
+.body-content {
+  display: inline-block;
+  width:100%;
+  height:auto;
+  text-align: center;
+  color:white;
+  background:rgba(59,46,38,0.9);
+  background: -webkit-linear-gradient(rgba(59,46,38,0.9), black); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(rgba(59,46,38,0.9), black); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(rgba(59,46,38,0.9), black); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(rgba(59,46,38,0.9), black); /* Standard syntax */
+}
+.body-content h1 {
+  margin: 3em;
+}
+.shop-button {
+  z-index: 10;
+  position: fixed;
+  top: 22em;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width:15%;
+  height:3%;
+}
+.shop-button a {
+  color:white;
+  text-decoration: none;
+  font-size: 20px;
+  padding:1em 5em;
+  background-color:rgba(124,66,44,0.6);
+  border-radius: 4px;
+}
+.shop-button a:hover {
+  background-color: rgba(124,66,44,0.8)
+}
+.content-pic {
+  z-index: 0;
+  width:60%;
+  height:40em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.content-pic img {
+  width:100%;
+  height: 100%;
+}
