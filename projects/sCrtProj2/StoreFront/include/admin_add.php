@@ -9,7 +9,7 @@ if (isset($_GET['add']) && $_GET['add'] == true) {
       <input class="add-text" type="text" name="product_type" placeholder="Type" required><br>
       <input class="add-text" type="text" name="product_price" placeholder="price" required><br>
       <input class="add-text" type="text" name="product_image" placeholder="image url" ><br>
-      <textarea class="product-description" name="product_description" cols="100" rows="5" placeholder="describe product" required></textarea><br>
+      <textarea class="product-description" name="product_description" cols="70" rows="5" placeholder="describe product" required></textarea><br>
       <input type="submit" name="submit" value="post">
     </form>
 _END;
