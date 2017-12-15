@@ -2,7 +2,6 @@
 $numItems = 0;
 $title = "shop";
 include_once "./include/head.php";
-include_once "./include/cart.php";
 ?>
 
 <!-- create containers for products -->
@@ -11,6 +10,7 @@ include_once "./include/cart.php";
   <div class="product-container">
 <?php if (isset($_SESSION['u_id'])) { //if a user has logged in , show products
         include_once "./include/products.php";
+        $cart = array();
       } else { //if user has NOT logged in, display 'must log in'
         echo "<h1 style='position:relative;left:3em;'>Must be Logged in to view content</h1>";
       }

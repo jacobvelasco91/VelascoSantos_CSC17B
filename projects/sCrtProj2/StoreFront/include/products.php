@@ -1,6 +1,5 @@
 <?php
 include_once "./include/connect.php";
-$list = array();
 //get all records from database
 $query = "SELECT * FROM items";
 if ($result = $Conn->query($query)) {
@@ -15,7 +14,7 @@ if ($result = $Conn->query($query)) {
       <p>{$record['product_type']}</p>
       <p>{$record['product_description']}</p>
       <p>{$record['product_price']}</p>
-      <p><a href="./shop.php?id={$id}">add to cart</a></p>
+      <p><button onclick="addCart({$record['product_id']})">add to cart</button></p>
     </div>
 _END;
   }
