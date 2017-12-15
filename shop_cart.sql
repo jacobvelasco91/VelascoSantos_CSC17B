@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 14, 2017 at 03:29 AM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.8
+-- Generation Time: Dec 15, 2017 at 04:49 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,20 +29,35 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `accounts` (
-  `user_id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `registration_date` date NOT NULL
+  `password` varchar(225) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `reg_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`user_id`, `first_name`, `last_name`, `email`, `password`, `registration_date`) VALUES
-(1, 'jacob', 'velasco', 'jacobvelasco91@gmail.com', '$2y$10$hLu7TcwOH4aa1CiqiyuQyeDjD67dk/DdMcOqDqAIXTiU1YORoUgzq', '2017-12-13');
+INSERT INTO `accounts` (`id_user`, `first_name`, `last_name`, `password`, `email`, `reg_date`) VALUES
+(1, 'jacob', 'velasco', '', 'jacobvelasco91@gmail.com', '2017-12-12'),
+(2, 'santos', 'velasco', '$2y$10$vpBdbnHy.EkWLx5scScnfeEiPzbr7xPXt78z6ecCEX7/OzoNLjr56', 'svelasco5@student.rccd.edu', '2017-12-14');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_order`
+--
+
+CREATE TABLE `customer_order` (
+  `order_id` int(11) NOT NULL,
+  `id_user` varchar(30) NOT NULL,
+  `product_id` int(30) NOT NULL,
+  `product_name` varchar(40) NOT NULL,
+  `product_price` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -52,10 +67,10 @@ INSERT INTO `accounts` (`user_id`, `first_name`, `last_name`, `email`, `password
 
 CREATE TABLE `items` (
   `product_id` int(11) NOT NULL,
-  `product_name` varchar(30) NOT NULL,
-  `product_type` varchar(30) NOT NULL,
-  `product_description` varchar(255) NOT NULL,
-  `product_image` varchar(255) NOT NULL,
+  `product_name` varchar(25) NOT NULL,
+  `product_type` varchar(25) NOT NULL,
+  `product_description` varchar(200) NOT NULL,
+  `product_image` varchar(225) NOT NULL,
   `product_price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -64,25 +79,11 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`product_id`, `product_name`, `product_type`, `product_description`, `product_image`, `product_price`) VALUES
-(1, 'baguette', 'french bread', 'A baguette is a long, thin loaf of French bread that is commonly made from basic lean dough. It is distinguishable by its length and crisp crust.', 'https://www.saveur.com/sites/saveur.com/files/styles/1000_1x_/public/custom-touts/2015/09/4hr_baguette_2000x1500.jpg?itok=4eIxTOxC&fc=50,50', 1.99),
-(2, 'Pumpkin pie', 'dessert pie', 'Pumpkin pie is a dessert pie with a spiced, pumpkin-based custard filling.', 'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/3/6/0/RF0104_From-Scratch-Pumpkin-Pie_s4x3.jpg.rend.hgtvcom.616.462.suffix/1433678596474.jpeg', 5.99),
-(3, 'chocolate chip cookie', 'drop cookie', 'A chocolate chip cookie is a drop cookie that originated in the United States and features chocolate chips as its distinguishing ingredient.', 'https://images-gmi-pmc.edge-generalmills.com/e8198dd2-770b-4c7c-a748-ca7538cf48d0.jpg', 1.99),
-(4, 'chocolate brownie', 'chocolate dessert', 'A chocolate brownie is a square, baked, chocolate dessert.', 'http://www.inspiredtaste.net/wp-content/uploads/2016/06/Brownies-Recipe-2-1200.jpg', 1.99),
-(5, 'monkey muffin', 'muffin', 'These bite-sized mini muffins will be a favorite with your family and friendsâ€”or anyone who loves bananas, peanut butter and chocolate!', 'https://cdn2.tmbi.com/TOH/Images/Photos/37/300x300/exps45608_SD1785596D37C_WEB.jpg', 2.99);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `order_cart`
---
-
-CREATE TABLE `order_cart` (
-  `order_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `product_name` varchar(30) NOT NULL,
-  `product_price` float NOT NULL,
-  `total` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(1, 'baguette', 'french bread', 'A baguette is a long, thin loaf of French bread that is commonly made from basic lean dough. It is distinguishable by its length and crisp crust', 'https://d2gk7xgygi98cy.cloudfront.net/8-3-large.jpg', 1.99),
+(2, 'Tres leches cake', 'sponge cake', 'A tres leches cake, also known as pan tres leches, is a sponge cakeâ€”in some recipes, a butter cakeâ€”soaked in three kinds of milk: evaporated milk, condensed milk, and heavy cream.', 'https://www.cookingclassy.com/wp-content/uploads/2017/05/tres-leches-cake-11.jpg', 10.99),
+(3, 'Chocolate Brownie', 'chocolate dessert', 'Brownies come in a variety of forms and may be either fudgy or cakey, depending on their density.', 'https://www.chelsea.co.nz/files/cache/c7eb8909bcbfb9ff878c499feb1dcbd5_f1433.jpg', 3.99),
+(4, 'Harvest pumpkin pie', 'baked dish', 'Perfectly spiced pumpkin pie topped with velvety pumpkin chiffon and finished with fresh whipped cream.', 'https://lh6.googleusercontent.com/-DUECUv8WgdY/TpfsLdp1vhI/AAAAAAAAYrE/5BIr3ZTDLp8/s800/IMG_5331-2.jpg', 15.99),
+(5, 'Chocolate chip cookie', 'cookie', 'A chocolate chip cookie is a drop cookie that originated in the United States and features chocolate chips as its distinguishing ingredient.', 'https://sugarspunrun.com/wp-content/uploads/2017/05/Chocolate-Chip-Cookie-Recipe-1-of-1.jpg', 0.99);
 
 --
 -- Indexes for dumped tables
@@ -92,19 +93,19 @@ CREATE TABLE `order_cart` (
 -- Indexes for table `accounts`
 --
 ALTER TABLE `accounts`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- Indexes for table `customer_order`
+--
+ALTER TABLE `customer_order`
+  ADD PRIMARY KEY (`order_id`);
 
 --
 -- Indexes for table `items`
 --
 ALTER TABLE `items`
   ADD PRIMARY KEY (`product_id`);
-
---
--- Indexes for table `order_cart`
---
-ALTER TABLE `order_cart`
-  ADD PRIMARY KEY (`order_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -114,17 +115,20 @@ ALTER TABLE `order_cart`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `customer_order`
+--
+ALTER TABLE `customer_order`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `order_cart`
---
-ALTER TABLE `order_cart`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
