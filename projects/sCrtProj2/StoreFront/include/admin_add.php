@@ -1,5 +1,5 @@
 <?php
-include_once "./include/newProduct.php";
+include_once "./include/classes/newProduct.php";
 //if 'add' is a valid value and it = true go into if statement | grab contents from url
 if (isset($_GET['add']) && $_GET['add'] == true) {
     //create form

@@ -1,5 +1,5 @@
 <?php
-include_once "./include/newProduct.php";
+include_once "./include/classes/newProduct.php";
 //if 'add' is a valid value and it = true go into if statement | grab contents from url
 if (isset($_GET['edit']) && $_GET['edit'] == true) {
   //check if any updates have been made | update any edit submitted
@@ -55,7 +55,7 @@ _start;
             <input class="add-text" type="text" name="product_price" placeholder="price" value="{$record['product_price']}" required><br>
             <input class="add-text" type="text" name="product_image" placeholder="image url" value="{$record['product_image']}" ><br>
             <textarea class="product-description" name="product_description" cols="100" rows="5" placeholder="describe product" required>{$record['product_description']}</textarea><br>
-            <input type="submit" name="submit_edit" value="post">
+            <input class="submit" type="submit" name="submit_edit" value="update">
           </form>
 _END;
       }

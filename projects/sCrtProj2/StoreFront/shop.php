@@ -1,7 +1,7 @@
 <?php
 $numItems = 0;
 $title = "shop";
-include_once "./include/head.html";
+include_once "./include/head.php";
 include_once "./include/cart.php";
 ?>
 
@@ -9,7 +9,12 @@ include_once "./include/cart.php";
 
 <div class="body-container">
   <div class="product-container">
-    <?php include_once "./include/products.php" ?>
+<?php if (isset($_SESSION['u_id'])) { //if a user has logged in , show products
+        include_once "./include/products.php";
+      } else { //if user has NOT logged in, display 'must log in'
+        echo "<h1 style='position:relative;left:3em;'>Must be Logged in to view content</h1>";
+      }
+?>
   </div>
 </div>
 

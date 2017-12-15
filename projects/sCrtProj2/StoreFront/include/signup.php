@@ -13,6 +13,7 @@ if (isset($_POST['submit'])) {
 
 //an array to hold error codes
   $errors = array();
+
   //if username is set, enter username validation
   if (isset($_POST['firstname'])) {
     $firstname = $_POST['firstname'];
@@ -69,29 +70,30 @@ if ($nPrblm == false && $ePrblm == false && $pPrblm == false && $lPrblm == false
   $errors = array();
   //include connect file
   require_once './include/connect.php';
-  require_once './include/newUser.php';
+  require_once './include/classes/newUser.php';
     //create an instance of newUser class | pass in db connection
     $account = new NewUser($Conn);
     //Create query to check if that email is already in use & execute query
     $query = "SELECT * FROM accounts WHERE email='{$account->getEmail()}'";
-    if ($result = mysqli_query($Conn,$query)) { //if query returned true, enter multiple email validation
+    if ($result = $Conn->query($query)) { //if query returned true | check how many rows came back
       //if rows > 0 , account with that email exists. problem = true
-      if (($rows = mysqli_num_rows($result)) > 0 ) {//if email entered returned >0 records from db
+      $rowCnt = $result->num_rows;
+      if ($rowCnt > 0 ) {//if email entered returned >0 records from db
         $dbPrblm = true;
         $errors[]= "An account with that email already exists.";
-      } elseif (($rows = mysqli_num_rows($result)) == 0) { //if email entered returned 0 records from db
-        //if 0 rows were returned, make new query to insert into data base
-        $query = "INSERT INTO accounts (first_name,last_name,email,password,registration_date)
+      } elseif ($rowCnt == 0) { //if email entered returned 0 records from db
+        //if 0 rows were returned, email valid for entry  | make new query to insert into data base
+        $query = "INSERT INTO accounts (first_name,last_name,email,password,reg_date)
         VALUES('{$account->getFirstname()}','{$account->getLastname()}','{$account->getEmail()}','{$account->getPassword()}',NOW())";
         //execute query
-        if ($result = mysqli_query($Conn,$query)) { //if query executed properly close database
-            mysqli_close($Conn);
+        if ($result = $Conn->query($query)) { //if query executed properly close database
+            $Conn->close();
         } else {
           header("refresh:3; url=./login_page.php");
           $dbPrblm = true;
-          $errors[] = "uh-oh something went wrong.";
+          $errors[] = "uh-oh something went wrong.".$Conn->error;
         }
-      } // exit if else statement of email returned 0 records
+      } // exit 'elseif' statement  email entered returned 0 records
     } else {
       header("refresh:2; url=./index.php");
       echo "<h1>woops! something went wrong<h1>";

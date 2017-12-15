@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['u_id'])) {
+  $log = "<a href='./include/logout.php'>logout</a>";
+} else {
+  $log = "<a href='./login_page.php'>login / sign up</a>";
+}
+ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
@@ -18,7 +26,7 @@
       </div>
       <div class="nav">
         <nav class="header-nav">
-          <a href="./login_page.php">log in / sign up</a>
+          <?php echo $log; ?>
           <a href="./cart_page.php">(<?php echo $numItems; ?>) cart <img src="./images/cart.png" alt="cart"> </a>
         </nav>
       </div>

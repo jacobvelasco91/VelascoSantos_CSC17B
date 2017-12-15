@@ -1,7 +1,7 @@
 <?php
 $title = "Sign up";
 $numItems = 0;
-include_once "./include/head.html";
+include_once "./include/head.php";
 include_once "./include/signup.php";
 ?>
 

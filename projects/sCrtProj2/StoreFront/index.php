@@ -1,7 +1,7 @@
 <?php
 $title = "home";
 $numItems = 0;
-include_once './include/head.html';
+include_once './include/head.php';
  ?>
  <div class="body-content">
    <h1>

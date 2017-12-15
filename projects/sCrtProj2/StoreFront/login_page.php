@@ -2,7 +2,7 @@
 $title = "login";
 $numItems = 0;
 include_once "./include/connect.php";
-include_once "./include/head.html";
+include_once "./include/head.php";
 include_once "./include/login.php";
 ?>
     <!--start of FORM -->
