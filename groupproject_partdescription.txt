@@ -1,2 +1,0 @@
-Santos Velasco Github.com/jacobvelasco91
-I assisted to create the landing page. This landing page encompassed the login system, which included logging in and signing out. Concepts that were used were that of using regular expressions to check user input upon log in and sign-up, use of PHP objects to create a new user, and use of cookies to store the current user who logged in. 
