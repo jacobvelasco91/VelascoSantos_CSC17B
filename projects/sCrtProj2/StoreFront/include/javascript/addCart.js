@@ -1,3 +1,6 @@
-function addCart(p_id) {
-  document.cookie = "product_id="+p_id;
+var quantity = 0;
+function addCart() {
+++quantity;
+var cname = "q";
+document.cookie = cname+"="+quantity;
 }
