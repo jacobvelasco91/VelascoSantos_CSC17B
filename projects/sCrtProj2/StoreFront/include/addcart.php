@@ -30,7 +30,7 @@ if (isset($_GET['product_id'])) {
       //store into session & database
       $_SESSION['cart'][$productID] = array('product'=>$productID,'quantity'=>1);
       $u_id = $_SESSION['u_id'];
-      $sql = "INSERT INTO c_order (id_user,product_id,product_quantity) VALUES ('{$u_id}','{$productID}',1)";
+      $sql = "INSERT INTO c_order (id_user,product_id,product_id2,product_quantity) VALUES ('{$u_id}','{$productID}','{$productID}',1)";
       $result = $Conn->query($sql);
       $Conn->close();
       header("location: ../shop.php?add=addedproduct");
