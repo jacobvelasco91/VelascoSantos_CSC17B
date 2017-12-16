@@ -1,6 +1,6 @@
-function validate(){
-var email = document.forms["loginform"]["email"].value;
-var pass = document.forms["loginform"]["password"].value;
+function validate() {
+var email = document.forms["login"]["email"].value;
+var pass = document.forms["login"]["password"].value;
 
 console.log(email);
 console.log(pass);
@@ -23,12 +23,9 @@ if (valpass == false) {
 }
 if (valpass && valemail) {
   return true;
-  localStorage.setItem('user',valemail);
-  localStorage.setItem('pass',valpass);
+
 }
 else {
   return false;
 }
-
-
 }
