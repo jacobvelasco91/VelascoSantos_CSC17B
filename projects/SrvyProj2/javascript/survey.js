@@ -12,3 +12,12 @@ function Survey(Obj){
 //Display the title
 //display the description
 //display the questions with their answers and name(key) attribute;
+function Question(qNum,q,numAn,a) {
+  this.questionNumber = numq;
+  this.question = q;
+  this.numberOfAnswers = numAn;
+  this.a[] = ;
+}
+a = array()
+q = new Question(1,"hello world",3,)
+console.log()

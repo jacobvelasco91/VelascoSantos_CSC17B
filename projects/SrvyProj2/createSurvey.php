@@ -1,4 +1,5 @@
 <?php
+//This will create the survey and insert it into the database 
 session_start();
 
 if (isset($_POST['submit-survey'])) {
@@ -6,6 +7,7 @@ if (isset($_POST['submit-survey'])) {
   $description = $_SESSION['info']['description'];
   $numQ = $_GET['q'];
   echo $numQ;
+
   //pulling contents from SESSION
   for ($i=1; $i < $numQ+1; $i++) {
     $q = $_SESSION['question'][$i]['question'];
