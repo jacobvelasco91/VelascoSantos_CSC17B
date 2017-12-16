@@ -3,11 +3,24 @@ body {
 }
 header {
   width:100%;
-  height:6em;
+  height:8em;
   background-color: #CCD9CE;
   text-align: center;
 }
 header img {
   width:60px;
   height:60px;
+}
+header h3 {
+
+}
+
+.logging {
+  float: right;
+  padding-right:25px;
+
+
+}
+.logging a {
+  margin-left: 10px;
 }

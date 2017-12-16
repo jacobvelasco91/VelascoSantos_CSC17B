@@ -1,0 +1,40 @@
+.choice-survey {
+  width:100%;
+  height:200px;
+  text-align: center;
+  margin-top: 3em;
+}
+.create-survey {
+  display: inline-block;
+  width:30%;
+  height:auto;
+
+}
+.create-survey a {
+  display: block;
+  padding:30px;
+  text-decoration: none;
+  font-size: 25px;
+  color:white;
+  background-color:#CCD9CE;
+}
+.create-survey a:hover {
+  background-color: lightgray;
+}
+.view-survey {
+  display: inline-block;
+  width:30%;
+  height:auto;
+  margin:15px;
+}
+.view-survey a {
+  display: block;
+  padding:30px;
+  text-decoration: none;
+  font-size: 25px;
+  color:white;
+  background-color:#CCD9CE;
+}
+.view-survey a:hover {
+  background-color: lightgray;
+}
