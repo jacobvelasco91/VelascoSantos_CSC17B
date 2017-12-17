@@ -1,0 +1,62 @@
+.admin-form {
+  width: 100%;
+  height:auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.admin-choice {
+  margin: 15px;
+  width: auto;
+  height: auto;
+}
+.choice {
+  vertical-align: top;
+  display: inline-block;
+  width:100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.choice a {
+  font-size: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  color:gray;
+  background-color: lightgray;
+  text-decoration: none;
+}
+.choice a:hover {
+  color:white;
+  background-color: gray;
+}
+.add-form {
+  margin-top: 5em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.add-form input {
+  font-size: 15px;
+  padding: 5px;
+  margin: 5px;
+  width: 25em;
+}
+table {
+  margin-top: 5em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+td {
+  border:1px gray solid;
+  padding:5px 25px;
+}
+th {
+  color:white;
+  background-color: black;
+}
+.submit:hover {
+  background-color: gray;
+}
