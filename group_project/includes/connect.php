@@ -2,7 +2,7 @@
 $hn = "localhost";
 $un = "root";
 $pw = "";
-$db = "blog";
+$db = "velasco";
 $Conn = mysqli_connect($hn,$un,$pw,$db);
 //If there was a problem connecting to the database, throw code, and redirect to home page
   if ($Conn == false) {
