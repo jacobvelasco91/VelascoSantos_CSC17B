@@ -4,7 +4,7 @@ $loginerror = "";                           //set loginerror to an empty html ta
 if ($_SERVER['REQUEST_METHOD'] == "POST") { //check if there is a request made to the server | if yes, enter statement
     $email = $_POST['email'];
     $pass = $_POST['password'];
-    $query = "SELECT * FROM accounts WHERE email='$email'"; //Create a query to retreive data to match
+    $query = "SELECT * FROM s_accounts WHERE email='$email'"; //Create a query to retreive data to match
     $result = $Conn->query($query); //result becomes object | execute query and check for any rows returned
     if($result->num_rows > 0){ //if returned 1 or more row , check password | email matched
       $record = $result->fetch_assoc();

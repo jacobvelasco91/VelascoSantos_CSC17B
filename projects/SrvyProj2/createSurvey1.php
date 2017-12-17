@@ -18,4 +18,5 @@ if (!isset($_POST['submit'])) {
   </form>
 _END;
 }
+include_once "./includes/footer.php";
 ?>

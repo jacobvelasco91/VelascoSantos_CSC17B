@@ -74,7 +74,7 @@ if ($nPrblm == false && $ePrblm == false && $pPrblm == false && $lPrblm == false
     //create an instance of newUser class | pass in db connection
     $account = new NewUser($Conn);
     //Create query to check if that email is already in use & execute query
-    $query = "SELECT * FROM accounts WHERE email='{$account->getEmail()}'";
+    $query = "SELECT * FROM s_accounts WHERE email='{$account->getEmail()}'";
     if ($result = $Conn->query($query)) { //if query returned true | check how many rows came back
       //if rows > 0 , account with that email exists. problem = true
       $rowCnt = $result->num_rows;
@@ -83,7 +83,7 @@ if ($nPrblm == false && $ePrblm == false && $pPrblm == false && $lPrblm == false
         $errors[]= "An account with that email already exists.";
       } elseif ($rowCnt == 0) { //if email entered returned 0 records from db
         //if 0 rows were returned, email valid for entry  | make new query to insert into data base
-        $query = "INSERT INTO accounts (first_name,last_name,email,password,reg_date)
+        $query = "INSERT INTO s_accounts (first_name,last_name,email,password,reg_date)
         VALUES('{$account->getFirstname()}','{$account->getLastname()}','{$account->getEmail()}','{$account->getPassword()}',NOW())";
         //execute query
         if ($result = $Conn->query($query)) { //if query executed properly close database

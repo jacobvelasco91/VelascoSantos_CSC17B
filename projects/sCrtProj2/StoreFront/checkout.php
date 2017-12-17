@@ -1,4 +1,5 @@
 <?php
+$title="checkout";
 include_once "./include/head.php";
 ?>
 

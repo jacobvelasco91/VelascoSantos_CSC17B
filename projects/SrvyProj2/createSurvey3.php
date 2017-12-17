@@ -45,4 +45,5 @@ include_once "./includes/back.php";
 
 
   }
+  include_once "./includes/footer.php";
  ?>

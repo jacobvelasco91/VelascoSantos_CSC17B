@@ -22,4 +22,5 @@ _END;
    }
    echo "<input type='submit' name='qcon' value='continue'></form>";
  }
+ include_once "./includes/footer.php";
 ?>
